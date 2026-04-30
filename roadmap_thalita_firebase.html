@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap de Inglês — Thalita</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF7EE;
+    --ink: #1C1C2E;
+    --navy: #1F3356;
+    --amber: #D4882A;
+    --amber-light: #F5D99A;
+    --sage: #5E8C6A;
+    --sage-light: #C4DEC9;
+    --blush: #E8D5C4;
+    --paper: #FFF9F0;
+    --muted: #8A8A9A;
+    --check-done: #5E8C6A;
+    --phase1: #D4882A;
+    --phase2: #5E8C6A;
+    --phase3: #3B6FA0;
+    --phase4: #8B4B8A;
+    --phase5: #B85C38;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 60px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(212,136,42,.18);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 10%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(94,140,106,.15);
+  }
+  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--amber-light); margin-bottom: 16px; display: block;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .hero h1 em { color: var(--amber-light); font-style: italic; }
+  .hero-sub {
+    font-size: 15px; line-height: 1.7;
+    color: rgba(255,255,255,.75);
+    max-width: 560px;
+    margin-bottom: 32px;
+  }
+  .hero-meta {
+    display: flex; gap: 28px; flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,.85);
+  }
+  .hero-meta-item strong { display: block; font-size: 17px; color: #fff; margin-bottom: 2px; }
+
+  /* ── CARTA ── */
+  .letter-section {
+    max-width: 780px; margin: 0 auto;
+    padding: 48px 24px 0;
+  }
+  .letter {
+    background: var(--paper);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.05);
+  }
+  .letter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 14px;
+  }
+  .letter p {
+    font-size: 14.5px; line-height: 1.85;
+    color: #3a3a4a; margin-bottom: 10px;
+  }
+  .letter p:last-child { margin-bottom: 0; }
+  .letter-sig {
+    margin-top: 16px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 16px; color: var(--navy);
+  }
+
+  /* ── GLOBAL PROGRESS ── */
+  .global-progress {
+    max-width: 780px; margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+  .gp-label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  .gp-bar-bg {
+    background: #E0DDD6; border-radius: 999px; height: 12px; overflow: hidden;
+  }
+  .gp-bar-fill {
+    height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--amber), var(--sage));
+    transition: width 0.6s ease;
+  }
+  .gp-numbers {
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: var(--muted); margin-top: 6px;
+  }
+  .gp-numbers strong { color: var(--ink); }
+
+  /* ── PHASES ── */
+  .phases { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+  .phases-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; margin-bottom: 32px;
+    color: var(--navy);
+  }
+
+  .phase {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    transition: box-shadow .2s;
+  }
+  .phase:hover { box-shadow: 0 4px 24px rgba(0,0,0,.1); }
+
+  .phase-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 22px 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .phase-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px; color: #fff;
+    flex-shrink: 0;
+  }
+  .phase-header-text { flex: 1; }
+  .phase-tag {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .phase-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--navy);
+  }
+  .phase-period {
+    font-size: 12px; color: var(--muted); margin-top: 2px;
+  }
+  .phase-mini-progress {
+    display: flex; align-items: center; gap: 10px;
+    flex-shrink: 0;
+  }
+  .phase-pct {
+    font-size: 13px; font-weight: 600;
+    width: 36px; text-align: right;
+  }
+  .phase-bar-bg {
+    width: 80px; height: 6px; background: #E8E8EA;
+    border-radius: 999px; overflow: hidden;
+  }
+  .phase-bar-fill {
+    height: 100%; border-radius: 999px; transition: width .5s;
+  }
+  .phase-chevron {
+    font-size: 18px; color: var(--muted);
+    transition: transform .25s;
+    flex-shrink: 0;
+  }
+  .phase.open .phase-chevron { transform: rotate(180deg); }
+
+  .phase-body {
+    display: none;
+    padding: 0 24px 24px;
+    border-top: 1px solid #F0EDE8;
+  }
+  .phase.open .phase-body { display: block; }
+
+  .phase-why {
+    font-size: 13px; line-height: 1.75;
+    color: #555; padding: 16px 0 20px;
+    border-bottom: 1px dashed #E0DDD6;
+    margin-bottom: 20px;
+  }
+  .phase-why strong { color: var(--navy); }
+
+  .check-group-title {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px; margin-top: 20px;
+  }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .check-item:hover { background: #F7F5F0; }
+  .check-item input[type=checkbox] { display: none; }
+  .check-box {
+    width: 20px; height: 20px; border-radius: 6px;
+    border: 2px solid #CCC;
+    flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+    font-size: 12px; color: #fff;
+  }
+  .check-item.done .check-box {
+    background: var(--check-done);
+    border-color: var(--check-done);
+  }
+  .check-item.done .check-box::after { content: '✓'; }
+  .check-item.done .check-text { text-decoration: line-through; color: var(--muted); }
+  .check-text { font-size: 14px; line-height: 1.6; }
+  .check-text small { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── WEEKLY ROUTINE ── */
+  .routine-section {
+    max-width: 780px; margin: 0 auto; padding: 0 24px 80px;
+  }
+  .routine-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; margin-bottom: 24px; color: var(--navy);
+  }
+  .routine-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .routine-card {
+    background: #fff; border-radius: 14px; padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  }
+  .routine-day {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 8px;
+  }
+  .routine-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; color: var(--navy); margin-bottom: 10px;
+  }
+  .routine-card ul { list-style: none; }
+  .routine-card ul li {
+    font-size: 13px; color: #555; line-height: 1.7;
+    padding-left: 14px; position: relative;
+  }
+  .routine-card ul li::before {
+    content: '→'; position: absolute; left: 0; color: var(--amber);
+  }
+  .routine-rest {
+    background: var(--sage-light); color: var(--sage);
+    font-size: 13px; font-weight: 500; text-align: center;
+    padding-top: 30px;
+  }
+
+  /* ── TIPS ── */
+  .tips-section {
+    background: var(--navy); color: #fff;
+    padding: 60px 24px;
+  }
+  .tips-inner { max-width: 780px; margin: 0 auto; }
+  .tips-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; margin-bottom: 32px;
+    color: var(--amber-light);
+  }
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .tip-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px; padding: 20px;
+  }
+  .tip-icon { font-size: 24px; margin-bottom: 10px; }
+  .tip-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--amber-light); }
+  .tip-card p { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.65; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center; padding: 40px 24px;
+    font-size: 13px; color: var(--muted);
+  }
+  .footer strong { color: var(--navy); }
+
+  /* ── COLORS PER PHASE ── */
+  .p1 .phase-num { background: var(--phase1); }
+  .p1 .phase-tag { color: var(--phase1); }
+  .p1 .phase-bar-fill { background: var(--phase1); }
+  .p1 .phase-pct { color: var(--phase1); }
+
+  .p2 .phase-num { background: var(--phase2); }
+  .p2 .phase-tag { color: var(--phase2); }
+  .p2 .phase-bar-fill { background: var(--phase2); }
+  .p2 .phase-pct { color: var(--phase2); }
+
+  .p3 .phase-num { background: var(--phase3); }
+  .p3 .phase-tag { color: var(--phase3); }
+  .p3 .phase-bar-fill { background: var(--phase3); }
+  .p3 .phase-pct { color: var(--phase3); }
+
+  .p4 .phase-num { background: var(--phase4); }
+  .p4 .phase-tag { color: var(--phase4); }
+  .p4 .phase-bar-fill { background: var(--phase4); }
+  .p4 .phase-pct { color: var(--phase4); }
+
+  .p5 .phase-num { background: var(--phase5); }
+  .p5 .phase-tag { color: var(--phase5); }
+  .p5 .phase-bar-fill { background: var(--phase5); }
+  .p5 .phase-pct { color: var(--phase5); }
+
+  @media (max-width: 520px) {
+    .hero { padding: 40px 20px 60px; }
+    .phase-bar-bg { width: 50px; }
+    .letter { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-label">Seu plano de inglês · Open English</span>
+    <h1>Sra. Thalita Sales,<br>como você diria, <em>continue a nadar🐟</em></h1>
+    <p class="hero-sub">
+      Este é o seu guia em português para navegar o Open English com confiança —
+      passo a passo, sem pressa, sem se perder.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>Maio 2026</strong>Início da jornada</div>
+      <div class="hero-meta-item"><strong>Janeiro 2027</strong>Meta final</div>
+      <div class="hero-meta-item"><strong>~9 meses</strong>Para construir uma base sólida</div>
+      <div class="hero-meta-item"><strong>1×/semana</strong>Ritmo realista</div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA -->
+<section class="letter-section">
+  <div class="letter">
+    <div class="letter-title">📝 Uma palavra antes de começar</div>
+    <p>
+      Thalita, o Open English é um curso excelente — mas ele começa 100% em inglês, e entendo que isso pode ser desanimador,
+      ainda mais pra quem está construindo a base. Fiz esse material exatamente para isso:
+      ser o seu "tradutor" da lógica do curso, para que você entenda
+      <em>por que</em> cada coisa existe antes de praticá-la lá sem ter muito com o que preocupar.
+    </p>
+    <p>
+      Não existe "tarde demais" e não existe "semana perdida". Cada vez que você abrir isso e marcar
+      uma caixinha, você está avançando. Pense no filho pródigo (Lucas 15): ele ficou longe, viveu um tempo
+      sem rumo — e quando decidiu voltar, o pai não contou os dias de ausência, não cobrou o tempo perdido.
+      Correu ao seu encontro. O simples ato de voltar já é a vitória. Toda vez que você abrir
+      este guia depois de semanas parada ou o que for, esse é o seu retorno — <strong>sempre será uma vitória</strong> .
+    </p>
+    <p>
+      Em teoria a meta em aberto é até Janeiro de 2027 — você tem tempo, desde que mantenha o ritmo de pelo menos
+      <strong>1 sessão por semana</strong>, com foco e calma - no seu tempo. Uma horinha ou menos bem aproveitada por semana
+      constrói uma base sólida em 9 meses.
+    </p>
+    <div class="letter-sig">Bons estudos Thalitinha!</div>
+  </div>
+</section>
+
+<!-- PROGRESSO GERAL -->
+<div class="global-progress">
+  <div class="gp-label">Progresso geral</div>
+  <div class="gp-bar-bg"><div class="gp-bar-fill" id="globalBar" style="width:0%"></div></div>
+  <div class="gp-numbers">
+    <span><strong id="doneCt">0</strong> tarefas concluídas</span>
+    <span id="globalPct" style="font-weight:600">0%</span>
+  </div>
+</div>
+
+<!-- PHASES -->
+<section class="phases">
+  <h2 class="phases-title">As 5 Fases da Jornada</h2>
+
+  <!-- FASE 1 -->
+  <div class="phase p1" id="phase1">
+    <div class="phase-header" onclick="togglePhase('phase1')">
+      <div class="phase-num">1</div>
+      <div class="phase-header-text">
+        <div class="phase-tag">Fase 1 · Maio – Junho 2026</div>
+        <h2>A Base de Tudo: Verbos Auxiliares</h2>
+        <div class="phase-period">To be · Do · Have — somente no presente</div>
+      </div>
+      <div class="phase-mini-progress">
+        <span class="phase-pct" id="pct1">0%</span>
+        <div class="phase-bar-bg"><div class="phase-bar-fill" id="bar1" style="width:0%"></div></div>
+      </div>
+      <div class="phase-chevron">▾</div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-why">
+        <strong>Por que isso primeiro?</strong> No inglês, três verbos controlam TUDO: <em>be</em>, <em>do</em> e <em>have</em>.
+        Sem entender eles, qualquer frase fica sem sentido. A boa notícia: são poucos e previsíveis.
+        Vamos do mais simples ao mais funcional — e sempre comparando com o português, que você já domina.
+      </div>
+
+      <div class="check-group-title">🔵 Verbo TO BE (ser/estar)</div>
+
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que o <em>be</em> é especial: ele se conjuga de verdade no presente
+          <small>I <strong>am</strong> · You <strong>are</strong> · He/She/It <strong>is</strong> · We/They <strong>are</strong></small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei frases positivas com to be: identidade, estado, profissão
+          <small>Ex: "I am tired." / "She is a nurse." / "They are friends."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Aprendi negativas com to be — basta colocar NOT depois
+          <small>Ex: "I am <strong>not</strong> happy." / "He is <strong>not</strong> here."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Formei perguntas com to be — o verbo vai para o começo
+          <small>Ex: "<strong>Are</strong> you okay?" / "<strong>Is</strong> she home?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Revisei como o português também tem "ser" e "estar" — e fiz paralelos com o inglês
+          <small>Diferença: em inglês o <em>be</em> faz o trabalho dos dois!</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🔵 Verbo DO (auxiliar do presente)</div>
+
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que o <em>do/does</em> não tem tradução direta — é só um sinal de pergunta ou negativa
+          <small>Do = eu/você/nós/eles · Does = ele/ela</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei perguntas no presente com do/does
+          <small>Ex: "<strong>Do</strong> you work here?" / "<strong>Does</strong> she like coffee?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei negativas com do/does + not
+          <small>Ex: "I <strong>don't</strong> understand." / "He <strong>doesn't</strong> speak English."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi quando o <em>do</em> é verbo principal ("fazer") vs. quando é auxiliar
+          <small>Ex: "I <strong>do</strong> my homework." (verbo) vs. "<strong>Do</strong> you know?" (auxiliar)</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🔵 Verbo HAVE (ter / auxiliar)</div>
+
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Aprendi o <em>have/has</em> como verbo principal de posse
+          <small>Ex: "I <strong>have</strong> a dog." / "She <strong>has</strong> two brothers."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="1">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que <em>have</em> também é auxiliar (será mais usado nas fases seguintes)
+          <small>Por ora: reconhecer ele nas frases do Open English já é ótimo!</small>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="phase p2" id="phase2">
+    <div class="phase-header" onclick="togglePhase('phase2')">
+      <div class="phase-num">2</div>
+      <div class="phase-header-text">
+        <div class="phase-tag">Fase 2 · Julho 2026</div>
+        <h2>Fazendo Perguntas: WH-Questions</h2>
+        <div class="phase-period">What · Where · When · Who · Why · How · Which</div>
+      </div>
+      <div class="phase-mini-progress">
+        <span class="phase-pct" id="pct2">0%</span>
+        <div class="phase-bar-bg"><div class="phase-bar-fill" id="bar2" style="width:0%"></div></div>
+      </div>
+      <div class="phase-chevron">▾</div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-why">
+        <strong>Por que agora?</strong> Você já sabe formar frases e perguntas básicas. Agora é hora de
+        perguntar <em>o que</em>, <em>onde</em>, <em>quando</em>... Aqui a lógica é simples:
+        <strong>WH + do/does + sujeito + verbo</strong> — sempre nessa ordem. Com <em>be</em>, é WH + be + sujeito.
+        Memorizar o significado das 7 palavras é inevitável, mas a estrutura é só uma.
+      </div>
+
+      <div class="check-group-title">📖 Vocabulário base (decorar de vez)</div>
+
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">Memorizei as 7 WH-words e seus significados
+          <small>What=O quê · Where=Onde · When=Quando · Who=Quem · Why=Por quê · How=Como · Which=Qual</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🏗️ Estrutura com DO/DOES</div>
+
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi a ordem: WH + do/does + sujeito + verbo principal
+          <small>Ex: "What <strong>do</strong> you eat for breakfast?" / "Where <strong>does</strong> she live?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei 5 perguntas com <em>what</em> e 5 com <em>where</em> usando do/does
+          <small>Dica: escreva as perguntas em um caderninho, leia em voz alta!</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei perguntas com <em>when</em>, <em>why</em> e <em>how</em>
+          <small>Ex: "Why do you study English?" / "How do you go to work?"</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🏗️ Estrutura com BE</div>
+
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi a ordem com <em>be</em>: WH + be + sujeito
+          <small>Ex: "Where <strong>are</strong> you?" / "Who <strong>is</strong> she?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei perguntas com <em>who</em> e <em>which</em> usando be
+          <small>Ex: "Which one <strong>is</strong> yours?" / "Who <strong>are</strong> they?"</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">✅ Consolidação</div>
+
+      <label class="check-item" data-phase="2">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Consigo montar uma pergunta WH nova sem olhar o guia
+          <small>Teste: cubra as dicas e monte 3 perguntas diferentes do zero</small>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="phase p3" id="phase3">
+    <div class="phase-header" onclick="togglePhase('phase3')">
+      <div class="phase-num">3</div>
+      <div class="phase-header-text">
+        <div class="phase-tag">Fase 3 · Agosto – Setembro 2026</div>
+        <h2>Ações em Andamento: Gerúndio e Contínuos</h2>
+        <div class="phase-period">Present Continuous · Past Continuous · -ING</div>
+      </div>
+      <div class="phase-mini-progress">
+        <span class="phase-pct" id="pct3">0%</span>
+        <div class="phase-bar-bg"><div class="phase-bar-fill" id="bar3" style="width:0%"></div></div>
+      </div>
+      <div class="phase-chevron">▾</div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-why">
+        <strong>Por que agora?</strong> Você já domina o <em>be</em>. Agora vamos usá-lo de novo — desta vez
+        para mostrar ações que <em>estão acontecendo</em>. O <em>-ing</em> em inglês é igual ao
+        "-ando / -endo / -indo" em português. E a mágica do Past Continuous é que você vai ver como
+        só de trocar o <em>be</em> (am/is/are → was/were) o tempo inteiro muda.
+      </div>
+
+      <div class="check-group-title">📐 Regras do -ING</div>
+
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Aprendi as regras para adicionar -ING ao verbo
+          <small>Normal: work→working · Termina em E: write→writing · Termina em consoante+vogal+consoante: run→running</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🟢 Present Continuous (agora / este momento)</div>
+
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi a estrutura: sujeito + am/is/are + verbo-ING
+          <small>Ex: "I <strong>am studying</strong>." / "She <strong>is watching</strong> TV."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei negativos e perguntas no Present Continuous
+          <small>Ex: "Are you working?" / "I am not sleeping." / "What are you doing?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Combinei WH-Questions com Present Continuous
+          <small>Ex: "Where are you going?" / "What is she eating?"</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🔵 Past Continuous (estava acontecendo)</div>
+
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Aprendi o verbo <em>be</em> no passado: was (I/he/she/it) e were (you/we/they)
+          <small>Só duas formas! Era is/am → was · Era are → were</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que a estrutura é exatamente igual, só o <em>be</em> muda
+          <small>Ex: "I <strong>was studying</strong>." / "They <strong>were running</strong>."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei perguntas e negativos no Past Continuous
+          <small>Ex: "Was she sleeping?" / "We were not watching TV."</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">✅ Integração WH + Contínuos</div>
+
+      <label class="check-item" data-phase="3">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Consigo montar perguntas e respostas mais elaboradas
+          <small>Ex: "What were you studying?" → "I was studying English."</small>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- FASE 4 -->
+  <div class="phase p4" id="phase4">
+    <div class="phase-header" onclick="togglePhase('phase4')">
+      <div class="phase-num">4</div>
+      <div class="phase-header-text">
+        <div class="phase-tag">Fase 4 · Outubro – Novembro 2026</div>
+        <h2>Falando do Passado: Simple Past</h2>
+        <div class="phase-period">Verbos regulares · Irregulares · DID</div>
+      </div>
+      <div class="phase-mini-progress">
+        <span class="phase-pct" id="pct4">0%</span>
+        <div class="phase-bar-bg"><div class="phase-bar-fill" id="bar4" style="width:0%"></div></div>
+      </div>
+      <div class="phase-chevron">▾</div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-why">
+        <strong>Por que agora?</strong> Você já sabe como verbos comuns funcionam no presente.
+        O Simple Past mostra que esses verbos <em>não se conjugam como o be</em> — eles ou ganham
+        <strong>-ED</strong> (regulares) ou mudam de forma (irregulares). A boa notícia: o auxiliar
+        <strong>did</strong> resolve as perguntas e negativas, exatamente como o <em>do/does</em> faz
+        no presente. Já é familiar!
+      </div>
+
+      <div class="check-group-title">📐 Verbos Regulares (-ED)</div>
+
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Aprendi a regra do -ED para verbos regulares no passado
+          <small>work→worked · study→studied · stop→stopped · live→lived</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei 10 verbos regulares em frases simples no passado
+          <small>Ex: "I worked yesterday." / "She studied a lot last week."</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">📐 Verbos Irregulares</div>
+
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Memorizei os 15 irregulares mais comuns
+          <small>go→went · have→had · see→saw · eat→ate · come→came · get→got · say→said · make→made · know→knew · take→took · think→thought · give→gave · find→found · tell→told · feel→felt</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei frases com esses irregulares no passado
+          <small>Ex: "I went to the market." / "She had a great day."</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🔧 Auxiliar DID (perguntas e negativas)</div>
+
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que <em>did</em> é o passado do <em>do</em> — funciona IGUAL, só no passado
+          <small>Estrutura: Did + sujeito + verbo (base) → "Did you eat?" / "Did she go?"</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Pratiquei negativas com didn't
+          <small>Ex: "I <strong>didn't</strong> go." / "He <strong>didn't</strong> understand."</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Combinei WH-Questions com o Simple Past
+          <small>Ex: "What did you eat?" / "Where did she go last night?"</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">✅ Diferença Present vs. Past Continuous</div>
+
+      <label class="check-item" data-phase="4">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi a diferença entre Simple Past e Past Continuous
+          <small>"I <strong>worked</strong> yesterday." (simples) vs. "I <strong>was working</strong> when she called." (contínuo)</small>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- FASE 5 -->
+  <div class="phase p5" id="phase5">
+    <div class="phase-header" onclick="togglePhase('phase5')">
+      <div class="phase-num">5</div>
+      <div class="phase-header-text">
+        <div class="phase-tag">Fase 5 · Dezembro 2026 – Janeiro 2027</div>
+        <h2>Possibilidade e Futuro: Verbos Modais</h2>
+        <div class="phase-period">Can · May · Must · Could · Would · Will</div>
+      </div>
+      <div class="phase-mini-progress">
+        <span class="phase-pct" id="pct5">0%</span>
+        <div class="phase-bar-bg"><div class="phase-bar-fill" id="bar5" style="width:0%"></div></div>
+      </div>
+      <div class="phase-chevron">▾</div>
+    </div>
+    <div class="phase-body">
+      <div class="phase-why">
+        <strong>Por que por último?</strong> Modais são versáteis e poderosos — mas fazem muito mais
+        sentido quando você já entende a base. Eles nunca se conjugam (nada de -s no he/she!) e
+        sempre são seguidos do verbo na forma base. Aqui você vai encontrar paralelos incríveis com
+        o português: <em>would</em> ≈ "faria", <em>will</em> ≈ "vou/farei", <em>could</em> ≈ "poderia".
+      </div>
+
+      <div class="check-group-title">🟢 Modais no Presente</div>
+
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>Can</em> — capacidade, permissão informal
+          <small>"I <strong>can</strong> speak English." / "Can I help you?" (≈ "posso / sei")</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>May</em> — possibilidade, permissão formal
+          <small>"It <strong>may</strong> rain today." / "May I come in?" (≈ "pode ser que / posso?")</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>Must</em> — obrigação, necessidade
+          <small>"You <strong>must</strong> study." / "She <strong>must</strong> be tired." (≈ "deve / precisa")</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🔵 Modais no Passado / Hipótese</div>
+
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>Could</em> — passado de can, ou possibilidade
+          <small>"I <strong>could</strong> swim when I was young." (≈ pretérito imperfeito: "eu conseguia / podia")</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>Would</em> — hipótese, cortesia, futuro do pretérito
+          <small>"I <strong>would</strong> help you." / "Would you like coffee?" (≈ "eu faria / você gostaria")</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">🟡 Modal do Futuro</div>
+
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          <em>Will</em> — futuro simples, decisões espontâneas
+          <small>"I <strong>will</strong> call you." / "She <strong>will</strong> arrive soon." (≈ "vou fazer / farei")</small>
+        </div>
+      </label>
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Entendi que modais nunca ganham -s no he/she/it
+          <small>"She <strong>can</strong> (nunca: cans) · He <strong>will</strong> (nunca: wills)"</small>
+        </div>
+      </label>
+
+      <div class="check-group-title">✅ Revisão Final</div>
+
+      <label class="check-item" data-phase="5">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-text">
+          Consigo usar os 6 modais em frases próprias, sem consultar o guia
+          <small>Teste final: escreva uma frase com cada modal do zero 🏆</small>
+        </div>
+      </label>
+    </div>
+  </div>
+
+</section>
+
+<!-- ROTINA SEMANAL -->
+<section class="routine-section">
+  <h2 class="routine-title">Sua Sessão Semanal — 1 vez por semana</h2>
+  <p style="font-size:14px; color:var(--muted); margin-bottom:8px; max-width:640px;">
+    Escolha um dia que funcione pra você, o que couber.
+    O segredo não é a frequência: é a <em>consistência</em>. Toda semana, tem aquele dia é seu.
+  </p>
+  <p style="font-size:13px; color:var(--muted); margin-bottom:28px; max-width:640px;">
+    A sessão tem <strong>~60 minutos</strong> divididos em 4 blocos. Siga a ordem — cada bloco prepara o próximo.
+  </p>
+  <div class="routine-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));">
+    <div class="routine-card">
+      <div class="routine-day">Bloco 1 · 10 min</div>
+      <h3>🔁 Revisão Rápida</h3>
+      <ul>
+        <li>Releia as caixinhas que já marcou</li>
+        <li>Repita em voz alta 3 frases da semana passada</li>
+        <li>Se esqueceu algo, anote e siga - não tem o menor problema esquecer(B12 mas nao tem problema)</li>
+      </ul>
+    </div>
+    <div class="routine-card">
+      <div class="routine-day">Bloco 2 · 20 min</div>
+      <h3>📖 Conteúdo do Guia</h3>
+      <ul>
+        <li>Leia o próximo item não marcado da fase atual</li>
+        <li>Leia os exemplos em voz alta, devagar</li>
+        <li>Escreva 2 frases suas com aquele conteúdo</li>
+      </ul>
+    </div>
+    <div class="routine-card">
+      <div class="routine-day">Bloco 3 · 20 min</div>
+      <h3>🎧 Open English</h3>
+      <ul>
+        <li>Abra o app e faça 1 lição completa</li>
+        <li>Se não entender algo, anote a estrutura e procure aqui no guia</li>
+        <li>Não pule: terminar uma lição conta!</li>
+      </ul>
+    </div>
+    <div class="routine-card">
+      <div class="routine-day">Bloco 4 · 10 min</div>
+      <h3>✅ Fechamento</h3>
+      <ul>
+        <li>Marque as caixinhas que completou hoje</li>
+        <li>Fale em voz alta: "<em>I studied today. I am improving.</em>"</li>
+        <li>Você terminou. Descansa com orgulho!</li>
+      </ul>
+    </div>
+  </div>
+  <div style="background:var(--paper); border-radius:12px; padding:18px 22px; margin-top:20px; border-left:3px solid var(--amber); max-width:680px;">
+    <p style="font-size:13.5px; color:#444; line-height:1.75;">
+      <strong style="color:var(--navy)">💡 Dica de ouro:</strong> Se na sua semana aquele dia não acontecer,
+      não cancele — <em>empurre</em>. Faça no dia seguinte, no final de semana, na proxima semana.
+      Uma sessão atrasada vale infinitamente mais do que uma sessão cancelada.
+      Lembre ó: o filho pródigo voltou. Você também pode as aulinhas (SEM PRESSA).
+    </p>
+  </div>
+</section>
+
+<!-- DICAS -->
+<section class="tips-section">
+  <div class="tips-inner">
+    <h2>💡 Dicas para não travar no Open English</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🇧🇷</div>
+        <h3>Use este guia como âncora</h3>
+        <p>Quando uma aula do Open English parecer sem sentido, volte aqui e veja em qual fase aquele conteúdo se encaixa. Isso vai dar contexto.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <h3>Repetição é a chave</h3>
+        <p>Não precisa decorar tudo de uma vez. Rever o mesmo conteúdo em dias diferentes faz a memória fixar de verdade — é ciência!</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🗣️</div>
+        <h3>Fale em voz alta, sempre</h3>
+        <p>Parece bobo, mas falar sozinha acelera o processo (é serio, não é igual eu falando com Douglas, isso ajuda mesmo). O ouvido precisa aprender junto com a cabeça. <Strong>Não importa a pronúncia no começo.</Strong></p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📵</div>
+        <h3>30 min sem celular</h3>
+        <p>Vou nem elaborar, isso eu já sei que você consegue melhor que eu.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">✅</div>
+        <h3>Marque as caixinhas!</h3>
+        <p>Parece simples, mas o ato de marcar como "feito" ativa a sensação de progresso no cérebro, é igual você escrever nos seus caderninhos. Use e abuse desse checklist.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🏆</div>
+        <h3>Janeiro 2027 é a meta</h3>
+        <p>Você não precisa ser fluente agora — precisa chegar em Janeiro com uma base sólida que te permita continuar evoluindo sozinha. Esse é o objetivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  Feito com carinho para <strong>Thalita</strong> 💛 · Sequência pedagógica elaborada para você · Open English 2026–2027
+</div>
+
+<script type="module">
+  import { initializeApp }                        from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  import { getFirestore, doc, getDoc, setDoc }    from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey:            "AIzaSyASR6HIsaaH2CR_E4suJnz6XyLE76HGlFs",
+    authDomain:        "roadmap-thalita.firebaseapp.com",
+    projectId:         "roadmap-thalita",
+    storageBucket:     "roadmap-thalita.firebasestorage.app",
+    messagingSenderId: "526256848638",
+    appId:             "1:526256848638:web:48509da760f1415f87afaf"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
+
+  const DOC_REF = doc(db, "progress", "thalita");
+
+  const phaseIds = ['phase1','phase2','phase3','phase4','phase5'];
+
+  const syncEl = document.createElement('div');
+  syncEl.style.cssText = `
+    position:fixed; top:12px; right:16px; z-index:9999;
+    font-family:'DM Sans',sans-serif; font-size:12px;
+    background:rgba(31,51,86,.92); color:#F5D99A;
+    padding:6px 14px; border-radius:999px;
+    opacity:0; transition:opacity .3s; pointer-events:none;
+  `;
+  document.body.appendChild(syncEl);
+
+  function showSync(msg, durationMs = 1800) {
+    syncEl.textContent = msg;
+    syncEl.style.opacity = '1';
+    clearTimeout(syncEl._t);
+    syncEl._t = setTimeout(() => syncEl.style.opacity = '0', durationMs);
+  }
+
+  function getKey(item) {
+    const label = item.querySelector('.check-text').textContent.trim().slice(0, 40);
+    return 'tha_' + label.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
+  }
+
+  function updateProgress() {
+    const allItems = document.querySelectorAll('.check-item');
+    const total    = allItems.length;
+    const done     = document.querySelectorAll('.check-item.done').length;
+
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    document.getElementById('globalBar').style.width  = pct + '%';
+    document.getElementById('doneCt').textContent     = done;
+    document.getElementById('globalPct').textContent  = pct + '%';
+
+    phaseIds.forEach((pid, i) => {
+      const phase   = document.getElementById(pid);
+      const phItems = phase.querySelectorAll('.check-item');
+      const phDone  = phase.querySelectorAll('.check-item.done').length;
+      const phPct   = phItems.length ? Math.round((phDone / phItems.length) * 100) : 0;
+      document.getElementById('pct' + (i + 1)).textContent    = phPct + '%';
+      document.getElementById('bar' + (i + 1)).style.width    = phPct + '%';
+    });
+  }
+
+  window.togglePhase = function(id) {
+    document.getElementById(id).classList.toggle('open');
+  };
+
+  async function loadProgress() {
+    showSync('🔄 Carregando...', 99999);
+    try {
+      const snap = await getDoc(DOC_REF);
+      const data = snap.exists() ? snap.data() : {};
+
+      document.querySelectorAll('.check-item').forEach(item => {
+        if (data[getKey(item)]) item.classList.add('done');
+      });
+    } catch (e) {
+      showSync('⚠️ Offline — progresso local', 3000);
+      console.warn('Firebase load error:', e);
+    }
+    updateProgress();
+    showSync('✓ Pronto', 1500);
+  }
+
+  async function saveItem(key, value) {
+    showSync('💾 Salvando...', 99999);
+    try {
+      await setDoc(DOC_REF, { [key]: value }, { merge: true });
+      showSync('✓ Salvo', 1800);
+    } catch (e) {
+      showSync('⚠️ Erro ao salvar', 3000);
+      console.warn('Firebase save error:', e);
+    }
+  }
+
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isDone = item.classList.toggle('done');
+      updateProgress();
+      saveItem(getKey(item), isDone);
+    });
+  });
+
+  document.getElementById('phase1').classList.add('open');
+  loadProgress();
+</script>
+</body>
+</html>
