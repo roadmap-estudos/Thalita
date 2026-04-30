@@ -1085,7 +1085,8 @@
   }
 
   document.querySelectorAll('.check-item').forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
       const isDone = item.classList.toggle('done');
       updateProgress();
       saveItem(getKey(item), isDone);
